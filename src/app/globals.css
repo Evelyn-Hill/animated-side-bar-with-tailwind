@@ -8,7 +8,7 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
@@ -29,5 +29,22 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer components {
+  .sidebar-icon {
+    @apply relative flex items-center justify-center h-24 w-24 mt-2 mb-2 mx-auto bg-gray-800 text-green-500
+    hover:bg-green-600 hover:text-white
+    rounded-2xl hover:rounded-3xl
+    transition-all duration-500 ease-in-out cursor-pointer;
+  }
+
+  .sidebar-tooltip {
+    @apply absolute w-auto p-2 m-16 min-w-max left-14
+    rounded-md shadow-md
+    text-white bg-gray-900
+    text-xs font-bold
+    transition-all duration-100 scale-0 origin-left
   }
 }
